@@ -19,11 +19,18 @@ class Home extends React.Component{
     });
   }
 
-  async componentDidMount(){
+  componentDidMount(){   
+    this.randomSong();     
+  }
+
+  async randomSong(){
     await store.dispatch(loadGenres());  
     const genres = this.state.genres;
     const src = genres[Math.floor(Math.random() * genres.length)];
     await store.dispatch(randomSong(src));  
+    if(this.state.random.preview_url === null){
+      this.randomSong();
+    }
     this.setState({loading: false});
   }
 
@@ -37,7 +44,7 @@ class Home extends React.Component{
         <h1>Rubytify</h1>      
         <div className='row'>
           <div className="artistsLink">
-            <Link to={{
+            <Link id="random" to={{
               pathname: '/player',
               state: {
                 url: this.state.random.preview_url,

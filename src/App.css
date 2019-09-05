@@ -8,17 +8,15 @@ body, html{
   height: 100%;
 }
 .container{
+  min-height: 100%;
   width: 90%;
   margin: 0 auto;
-  padding-top: 20px;
   display: grid;
 	grid-template: auto/repeat(5, minmax(200px, 1fr));
   grid-row-gap: 20px;
   justify-items: center;
+  align-content: space-around;
   background-color: #151515;
-}
-.albums{
-  height: 100%;
 }
 .artist, .album img{  
   height: 200px;
@@ -67,9 +65,10 @@ body, html{
   text-decoration: none;		
 }
 .list{
+  min-height: 100%;
   width: 65%;
   margin: 0 auto;
-  padding-bottom: 20px;
+  padding-bottom: 1px;
   background-color: #151515;
 }
 .wrapper{

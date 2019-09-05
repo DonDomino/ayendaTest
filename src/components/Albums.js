@@ -30,7 +30,7 @@ class Albums extends React.Component{
     }
     
     return (
-      <div className="container albums">
+      <div className="container">
         {this.state.albums.map((album, index) => 
           <div className="album" key={index}>            
             <Link to={`/albums/${album.id}/songs`}>
